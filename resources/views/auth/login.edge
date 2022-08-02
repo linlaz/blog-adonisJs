@@ -1,0 +1,36 @@
+@layout('layout/auth')
+
+@set('title', 'Login - Maximum')
+
+@section('body')
+<div>
+  <h3>Sign In</h3>
+</div>
+
+<form method="POST" action="/login" class="rounded-5 p-4" style="background-color: #fff;">
+  {{ csrfField() }}
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" id="email">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="password">
+  </div>
+  <div class="mb-3 form-check d-flex justify-content-between">
+    <div class="remeberme">
+      <input type="checkbox" name="remember" class="form-check-input" id="checkbox1" value="true">
+      <label class="form-check-label" for="remember">remember me</label>
+    </div>
+    <div class="forgot-password">
+        <a href="/forgot-password" class="fs-6">Forgot Password</a>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+  <div class="my-3 already-account">
+    <p>Don't have an account ?<a href="/registrasi"> Register</a></p>
+  </div>
+</form>
+@endsection
+
+

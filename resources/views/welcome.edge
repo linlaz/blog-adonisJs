@@ -1,0 +1,36 @@
+@layout('layout/home-page')
+@set('title', 'Maximum')
+
+@section('body')
+
+   <div class="p-4 text-white container-fluid mx-auto bg-111827">
+    <div class="my-5 ml-auto-mr-50 col-5">
+      <h1>Maximum Article</h1>
+      <p class="my-4">Place For Good Article In Internet</p>
+    </div>
+  </div>
+
+<div class="col-md-12 col-lg-9 col-xl-10 mx-auto my-5 p-md-5 p-lg-5 p-sm-5 p-5">
+  <h4>Tranding Article</h4>
+    <div class="row row-cols-3 my-4">
+      @each(post in data)
+        <div class="col-12 col-xl-3 col-lg-4 col-md-4 col-sm-12 px-3 my-md-5 my-sm-4 card invisible-border" style="position: relative;">
+          <img src="https://parsinta.s3.ap-southeast-1.amazonaws.com/images/series/blog-dengan-inertia-react-ssr-adhfl.jpg" class="rounded img-fluid" alt="Maximum">
+          <div class="d-block" style="transform: rotate(0);">
+            <a href="/category/"><span class="badge bg-secondary text-wrap text-break">{{ post.$preloaded.category.name_category }}</span></a>
+          </div>
+          <p class="fs-5 fw-bold">{{ post.title }}</p>
+          <div class="d-flex justify-content-between">
+            <div class="form-text">
+              {{ post.createdAt.toFormat('d-M-yyyy') }}
+            </div>
+            <div class="">
+              <p class="fs-6">{{ post.$preloaded.author.username }}</p>
+            </div>
+          </div>
+          <a  href="/post/{{ post.slug }}" class="stretched-link"></a>
+        </div>
+      @endeach
+    </div>
+</div>
+@endsection

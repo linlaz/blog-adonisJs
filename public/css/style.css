@@ -1,0 +1,32 @@
+.invisible-border{
+  border: none;
+}
+
+.body-content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    background-color: #D1D5DB;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 650px;
+  padding: 15px;
+  margin: auto;
+}
+
+.rounded-5 {
+  border-radius: 0.5rem!important;
+}
+
+.bg-111827{
+  background-color: #111827;
+}
+
+.ml-auto-mr-50{
+  margin-left: auto;
+  margin-right: 50%;
+}

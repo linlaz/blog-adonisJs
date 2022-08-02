@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    @include('partial/meta')
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {{-- mengambil navbar dari   --}}
+        @include('partial/navbar')
+        {{--  <div class="col-md-12 col-lg-9 col-xl-10 mx-auto my-5 p-md-5 p-lg-5 p-sm-5 p-5">  --}}
+        <main>
+          @!section('body')
+        </main>
+        {{--  </div>  --}}
+        @include('partial/script')
+  </body>
+</html>

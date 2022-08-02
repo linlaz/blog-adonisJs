@@ -1,0 +1,69 @@
+@layout('layout/auth')
+@set('title', 'registrasi - Maximum')
+@section('body')
+<div>
+  <h3>Registrasi </h3>
+</div>
+  @if(flashMessages.has('errors'))
+    {{ inspect(flashMessages.all().errors) }}
+  @endif
+<form method="post" action="/registrasi" class="rounded-5 p-4" style="background-color: #fff;">
+  {{ csrfField() }}
+  <div class="mb-3">
+    <label for="username" class="form-label">username</label>
+    <input type="text" name="username" class="form-control" id="username"
+    @if(flashMessages.has('username'))
+      value="{{ flashMessages.get('username') }}"
+    @endif
+    >
+    @if(flashMessages.has('errors.username'))
+    <div class="alert alert-warning my-3" role="alert">
+      {{ flashMessages.get('errors.username') }}
+    </div>
+    @endif
+
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" id="email"
+
+    @if(flashMessages.has('username'))
+     value="{{ flashMessages.get('email') }}"
+    @endif
+    >
+
+    @if(flashMessages.has('errors.email'))
+    <div class="alert alert-warning my-3" role="alert">
+      {{ flashMessages.get('errors.email') }}
+    </div>
+    @endif
+
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="password">
+
+    @if(flashMessages.has('errors.password'))
+    <div class="alert alert-warning my-3" role="alert">
+      {{ flashMessages.get('errors.password') }}
+    </div>
+    @endif
+
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">password confirmation</label>
+    <input type="password" name="passwordConfirmation" class="form-control" id="password_confirmation">
+
+    @if(flashMessages.has('errors.passwordConfirmation'))
+    <div class="alert alert-warning my-3" role="alert">
+      {{ flashMessages.get('errors.passwordConfirmation') }}
+    </div>
+    @endif
+
+  </div>
+  <button type="submit" class="btn btn-primary">Registrasi</button>
+  <div class="my-3 already-account">
+    <p>Already registered <a href="/login"> ? Login</a></p>
+  </div>
+</form>
+@endsection

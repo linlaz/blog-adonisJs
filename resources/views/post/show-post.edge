@@ -1,0 +1,17 @@
+@layout('layout/home-page')
+@set('title', data.title)
+
+@section('body')
+<div class="p-4 text-white container-fluid mx-auto bg-111827">
+  <div class="my-5 ml-auto-mr-50 col-5">
+    <h1>{{data.title}}</h1>
+    <p class="my-4"><a href="/author/{{ data.$preloaded.author.username}}">{{ data.$preloaded.author.username }}</a> -  <a href="/category/{{ data.$preloaded.category.slug_category }}" style="color: coral;">{{data.$preloaded.category.name_category}}</a></p>
+    <p> {{ data.createdAt.toFormat('d-M-yyyy') }} </p>
+  </div>
+</div>
+
+<div class="article container my-5">
+  {{ data.content }}
+</div>
+
+@endsection
